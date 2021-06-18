@@ -1,0 +1,343 @@
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: unset;
+  }
+  
+  ::ng-deep .mat-option-pseudo-checkbox.mat-pseudo-checkbox-checked {
+    background-color: #00b4d8;
+  }
+  
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: #00b4d8;
+  }
+  
+  ::ng-deep .mat-progress-bar-buffer {
+    background: #e4e8eb;
+  }
+  
+  div.gridContainer {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    column-gap: 5px;
+    row-gap: 0.05em;
+  }
+  
+  div.gridBg {
+    background-color: white;
+    grid-column-start: 2;
+    grid-column-end: 16;
+    grid-row-start: 1;
+    grid-row-end: 9;
+    border-radius: 8px;
+  }
+  
+  .itemForm1 {
+    margin-top: 3%;
+    grid-column-start: 3;
+    grid-column-end: 15;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  
+  .itemForm19 {
+    grid-column-start: 3;
+    grid-column-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  
+  .itemForm4 {
+    grid-column-start: 9;
+    grid-column-end: 11;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  
+  .itemForm24 {
+    grid-column-start: 11;
+    grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  
+  .itemForm16 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  
+  
+  
+  .itemForm3 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .itemForm23 {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .itemForm7 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .itemForm26 {
+    grid-column-start: 9;
+    grid-column-end: 11;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .itemForm27 {
+    grid-column-start: 11;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .itemForm5 {
+    grid-column-start: 13;
+    grid-column-end: 15;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  
+  .itemForm6 {
+    grid-column-start: 15;
+    grid-column-end: 16;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  
+  .itemForm29 {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  
+  .itemForm30 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 4;
+    grid-row-end: 5;
+   }
+  
+   .itemForm31 {
+    grid-column-start: 9;
+    grid-column-end: 11;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  
+  .itemForm18 {
+    grid-column-start: 11;
+    grid-column-end: 13;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  
+  .itemForm25 {
+    grid-column-start:13;
+    grid-column-end: 15;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .itemFormAddKeywords {
+    grid-column-start: 15;
+    grid-column-end: 16;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .itemForm14 {
+    grid-column-start: 3;
+    grid-column-end: 15;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+  
+  .itemForm12 {
+    grid-column-start: 13;
+    grid-column-end: 15;
+    grid-row-start: 6;
+    grid-row-end: 7;
+  }
+  
+  .itemForm13 {
+    grid-column-start: 15;
+    grid-column-end: 16;
+    grid-row-start: 6;
+    grid-row-end: 7;
+  }
+  
+  .box {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    padding-top: 6%;
+    padding-left: 5%;
+    font-size: 13px;
+    font-family: "Google Sans", sans-serif !important;
+    color: #777777 !important;
+  }
+  
+  
+  
+  .itemForm9 {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 7;
+  }
+  .whatsapp {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 7;
+  }
+  
+  .clientes {
+    grid-column-start: 13;
+    grid-column-end: 15;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  
+  .itemForm17 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 7;
+    grid-row-end: 8;
+  }
+  
+  .itemForm15 {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 7;
+    grid-row-end: 8;
+  }
+  
+  .itemForm28 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 7;
+    grid-row-end: 8;
+  }
+  
+  
+  
+  .itemForm2 {
+    grid-column-start: 12;
+    grid-column-end: 14;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    text-align: left;
+    margin-bottom: 4%;
+    margin-top: 2%;
+  }
+  
+  .itemForm21 {
+    grid-column-start: 3;
+    grid-column-end: 15;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    text-align: center;
+    margin-bottom: 4%;
+    margin-top: 2%;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    height: 80%;
+  }
+  
+  mat-label.labelText,
+  .camTitle {
+    opacity: 0.8;
+  }
+  
+  .selectContent {
+    opacity: 0.6;
+    color: #514d4d;
+  }
+  
+  .chipContent {
+    opacity: 0.8;
+  }
+  
+  div button mat-icon {
+    color: #979dac;
+  }
+  
+  .fieldContent {
+    opacity: 0.8;
+  }
+  
+  p.labelTitle {
+    margin-bottom: 0.5% !important;
+    margin-top: 2%;
+  }
+  
+  mat-label.labelTitle {
+    margin-top: 2%;
+    font-family: "Google Sans", sans-serif !important;
+    font-size: 22px;
+    //color: #2196f3;
+    color: black;
+  }
+  
+  mat-form-field input.inputDescription {
+    height: 45px !important;
+    opacity: 0.6;
+    color: #514d4d;
+  }
+  
+  .custom-file-label {
+    opacity: 0.6;
+  }
+  
+  .custom-file-input {
+    opacity: 0.8;
+    color: #514d4d;
+  }
+  
+  .labelSubtitle {
+    margin-bottom: 0.5% !important;
+  }
+  
+  .example-additional-selection {
+    opacity: 0.8;
+    color: #514d4d !important;
+    //color: yellowgreen;
+  }
+  
+  .optionSelector {
+    opacity: 0.8;
+    font-size: 12px !important;
+    font-family: "Google Sans", sans-serif !important;
+    color: #514d4d !important;
+  }
+  
+  div.itemForm21 #buttSucces {
+    margin-top: 4%;
+  }
+  
+  .butonclass{
+    margin-top: 9px;
+  }
+  

@@ -1,0 +1,28 @@
+.container {
+    background-color: #1d1d1d;
+    color: #a2a2a2;
+    font-size: 14px;
+    text-align: center;
+    padding: 7% 0% 7% 0%;
+}
+
+.container img {
+    margin-bottom: 2%;
+}
+
+.container p {
+    margin: 0.3rem;
+}
+
+@media (min-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2% 0% 2% 0%;
+    }
+    .container img {
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 0px;
+    }
+}

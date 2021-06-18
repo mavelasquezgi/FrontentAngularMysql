@@ -1,0 +1,38 @@
+<nav *ngIf="diviceXs || diviceSm">
+    <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+        <ng-container *ngFor="let itemOut of menuLogOut">
+            <a [routerLink]="[itemOut.url]" mat-list-item>{{itemOut.title}}</a>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #loggedIn>
+        <ng-container *ngFor="let itemIn of menuLogIn">
+            <a [routerLink]="[itemIn.url]" mat-list-item *ngIf="checkRole(itemIn.roles)">{{itemIn.title}}</a>
+        </ng-container>
+
+        <a id="signOut" (click)="authService.logout()" mat-list-item>
+            <span class="material-icons">logout</span>
+            <span>Cerrar Sesión </span>
+        </a>
+    </ng-template>
+</nav>
+
+<nav *ngIf="!diviceXs && !diviceSm" fxLayout="row" fxLayoutAlign="end center" >
+    <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+        <ng-container *ngFor="let itemOut of menuLogOut">
+            <a [routerLink]="[itemOut.url]" >{{itemOut.title}}</a>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #loggedIn>
+        <ng-container *ngFor="let itemIn of menuLogIn">
+            <a [routerLink]="[itemIn.url]" *ngIf="checkRole(itemIn.roles)">{{itemIn.title}}</a>
+        </ng-container>
+        
+        <a id="signOut" (click)="authService.logout()" fxLayoutAlign="space-around center">
+            <span>Cerrar Sesión </span>
+            <span class="material-icons">logout</span>
+        </a>
+    </ng-template>
+</nav>
+

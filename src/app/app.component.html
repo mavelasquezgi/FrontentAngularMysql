@@ -1,0 +1,89 @@
+<mat-toolbar id="header">
+
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" fxLayoutAlign.xs="start center" fxLayoutAlign.sm="start center">
+
+    <button id="btn-menu" mat-icon-button (click)="sidenav.toggle()" fxFlex="10" fxShow="true" fxHide.gt-sm>
+      <span class="material-icons"> menu </span>
+    </button>
+
+    <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+        
+      <figure id="logoPlatform" fxFlex="20" fxFlex.xs="40"></figure>
+
+    </ng-container>
+
+    <ng-template #loggedIn>
+      
+      <div id="brandingCompany" fxLayout="row" fxLayoutAlign="space-around center" >
+          <figure id="logoPlatform" fxFlex="50" fxFlex.xs="100"></figure>
+          <figcaption></figcaption>
+        </div>
+      
+
+    </ng-template>
+
+
+    <app-menu *ngIf="!diviceXs && !diviceSm" fxFlex="70"></app-menu>
+
+  </mat-toolbar-row>
+  
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav>
+
+    <mat-nav-list>
+      <app-menu></app-menu>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <router-outlet> </router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<!-- <mat-sidenav-container>
+  <mat-sidenav class="nav-side" position="end" #sidenavHome mode="over" opened="false"
+    [ngClass]="{'sidenavColor' : authService.loggedIn()}">
+
+    <ng-container *ngIf="!authService.loggedIn(); else sideLoggedIn">
+      <div><a class="navColorTag" mat-button routerLink="/home" routerLinkActive="activeLink">Inicio</a></div>
+      <div><a class="navColorTag" mat-button routerLink="/us" routerLinkActive="activeLink">Nosotros</a></div>
+      <div><a class="navColorTag" mat-button routerLink="/customer" routerLinkActive="activeLink">Clientes</a></div>
+      <div><a class="navColorTag" mat-button routerLink="/contact" routerLinkActive="activeLink">Contacto</a></div>
+      <div><a class="navColorTag" mat-button routerLink="/signin" routerLinkActive="activeLink">Iniciar Sesión</a></div>
+    </ng-container>
+
+    <ng-template #sideLoggedIn>
+      <div><a class="navColorTagBlue" mat-button routerLink="/home" routerLinkActive="activeLink">Inicio</a></div>
+      <div><a class="navColorTagBlue" mat-button routerLink="/profiles" *ngIf="checkPlatform()"
+          routerLinkActive="activeLink">Perfiles</a></div>
+      <div><a class="navColorTagBlue" mat-button routerLink="/searchengine" *ngIf="checkPlatform()"
+          routerLinkActive="activeLink">Búsquedas-Radio</a></div>
+      <div><a class="navColorTagBlue" mat-button routerLink="/searchtv" *ngIf="checkPlatform()"
+          routerLinkActive="activeLink">Búsquedas-Tv</a></div>
+      <div><a class="navColorTagBlue" mat-button routerLink="/news" *ngIf="checkCustomer()"
+          routerLinkActive="activeLink">Noticias</a></div>
+      <a class="navColorTagBlue" mat-button routerLink="/newsPanel" *ngIf="checkCustomer()"
+        routerLinkActive="activeLink">Panel de Noticias</a>
+      <div><a class="navColorTagBlue" mat-button routerLink="/radio" *ngIf="checkPlatform()"
+          routerLinkActive="activeLink">Radio</a></div>
+      <div><a class="navColorTagBlue" mat-button routerLink="/tvs" *ngIf="checkPlatform()"
+          routerLinkActive="activeLink">Tv</a></div>
+      <div><a class="navColorTagBlue" mat-button routerLink="/press" *ngIf="checkPlatform()"
+          routerLinkActive="activeLink">Prensa</a></div>
+      <div><a class="navColorTagBlue" mat-button routerLink="/searchweb" *ngIf="checkPlatform()"
+          routerLinkActive="activeLink">Internet</a></div>
+      <div><a class="navColorTagBlue" mat-button (click)="authService.logout()">Cerrar Sesión</a></div>
+    </ng-template>
+  </mat-sidenav>
+  <mat-sidenav-content [ngClass]="{'paddingContent' : !authService.loggedIn()}">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content> -->

@@ -1,0 +1,56 @@
+@import "../../../assets/branding";
+
+nav{
+
+    a{
+        color:$secondary-color;
+        font-family: $font-principal;
+        font-size: .8em;
+        font-weight: 400;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    a#signOut{
+        cursor: pointer;
+        
+
+        span.material-icons{
+            color:$fourth-color;
+            font-size: 30px;
+            margin: 0 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 599px){
+    a{
+        font-size: 1.2em !important;
+        margin: 10px 0 !important;
+    }
+
+    a#signOut{
+        
+        span.material-icons{
+            margin: 0 10px 0 0 !important;
+        }
+    }
+
+  
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px){
+    a{
+        font-size: 1em !important;
+        margin: 10px 0 !important;
+    }
+    
+
+    a#signOut{
+        
+        span.material-icons{
+            margin: 0 10px 0 0 !important;
+        }
+    }
+
+}

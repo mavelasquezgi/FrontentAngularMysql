@@ -1,0 +1,6 @@
+<div class="container">
+  <ng-container *ngFor="let itemIn of menu">
+    <div [routerLink]="[itemIn.url]">{{itemIn.title}}</div>
+  </ng-container>
+</div>
+<app-footer></app-footer>

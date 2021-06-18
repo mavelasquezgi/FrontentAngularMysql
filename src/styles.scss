@@ -1,0 +1,65 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+//Vars Colors of themplate
+@import "vars-colors.scss";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$stakeholders-primary: mat-palette($md-mainColor);
+$stakeholders-secondary: mat-palette($md-secondarycolor);
+$stakeholders-accent: mat-palette($md-mainColor, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$stakeholders-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$stakeholders-theme: mat-light-theme(
+  (
+    color: (
+      primary: $stakeholders-secondary,
+      secondary: $stakeholders-primary,
+      accent: $stakeholders-accent,
+      warn: $stakeholders-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($stakeholders-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  //background-color: rgb(231, 230, 230);
+  // background: linear-gradient(920deg, #e2e1e1, #ebeff0);
+}
+
+.urlStyle {
+  font-style: italic;
+  color: #042f66;
+  margin: 10px;
+}
+
+
+mat-sidenav-content{
+  background-color: #ffff;
+}

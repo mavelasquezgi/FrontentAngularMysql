@@ -1,0 +1,115 @@
+@import "../../../../assets/branding";
+
+section.card {
+    align-items: flex-start;
+    background-color: $main-color;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 15px auto;
+    padding: 15px 0px 15px 15px;
+
+    div#statistics {
+        border-right: .5px solid $secondary-color;
+        width: 35%;
+
+        p#date{
+            font-family: $font-secundaria;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        div {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+
+            h3 {
+                color: $fourth-color;
+                font-family: $font-secundaria;
+                font-weight: 700;
+                margin: 5px 5px 5px 0px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 45%;
+
+                span {
+                    position: relative;
+                    top: 3px;
+                }
+            }
+
+            p {
+                font-family: $font-secundaria;
+                font-weight: 300;
+                margin: 5px 5px 5px 0px;
+                width: 45%;
+
+                strong{
+                    font-family: $font-secundaria;
+                    font-weight: 700;
+                    letter-spacing: -.6px;
+                }
+            }
+        }
+    }
+
+    article {
+        padding-left: 20px;
+        width: 65%;
+
+        div#options {
+            align-items: center;
+            background: $fourth-color;
+            border-radius: 0 12px;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: -15px;
+            margin-left: auto;
+            padding: 5px 5px 0px 5px;
+            width: 80px;
+
+            figure {
+                color:$main-color;
+                cursor: pointer;
+                margin: 0 5px;
+                width: 50%;
+            }
+        }
+
+        h3{
+            color: $fourth-color;
+            font-weight: 700;
+            line-height: 1.2em;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        section#infoStatistics{
+            align-items: center;
+            display: flex;
+            justify-content: space-around;
+
+            p{
+                font-family: $font-secundaria;
+                font-weight: 300;
+
+                strong{
+                    font-family: $font-secundaria;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        button{
+            border-radius: 12px;
+            display: block;
+            margin-left: auto;
+            margin-right: 20px;
+            width: 150px;
+        }
+    }
+}

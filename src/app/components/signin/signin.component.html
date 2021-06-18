@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="left-container"></div>
+  <div class="right-container">
+    <div class="contact-form">
+      <form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm.value)">
+        <div class="containerlogo">
+          <div class="logosignin"></div>
+        </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre de Usuario</mat-label>
+          <input matInput placeholder="" formControlName="username">
+          <mat-icon style="color: #979dac;" matSuffix>email</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" matInput placeholder="" formControlName="password">
+          <mat-icon style="color: #979dac;" matSuffix>vpn_key</mat-icon>
+        </mat-form-field>
+        <div class="hint">
+          <mat-hint>¿Olvidaste tu contraseña?</mat-hint>
+        </div>
+        <br>
+        <div class="submitbutton">
+          <button color="success" mat-raised-button [disabled]="!signInForm.valid">
+            Iniciar Sesión
+          </button>
+        </div>
+        <br>
+        <div class="labelbutton" routerLink="/signup">¿No tienes cuenta? Crea una cuenta</div>
+      </form>
+    </div>
+  </div>
+</div>

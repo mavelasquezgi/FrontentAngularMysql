@@ -1,0 +1,74 @@
+@import "../../../../assets/branding";
+
+
+
+section#main {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+
+    app-search-panel {
+        margin: 10px;
+        min-width: 300px;
+        width: 27%;
+    }
+
+    section {
+        margin: 10px;
+        padding: 10px;
+        width: 68%;
+
+        h1 {
+            color: $fourth-color;
+            font-family: $font-principal;
+            font-weight: 700;
+            text-align: center;
+
+            span {
+                color: $secondary-color;
+                font-size: .6em;
+                font-weight: 400;
+            }
+        }
+
+        div#loader{
+            height: 40px;
+            margin: 30px auto;
+            width: 40px;
+        }
+
+        section {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            h3{
+                color:$five-color;
+                border-bottom: 1px solid $five-color;;
+                font-weight: 700;
+                margin-top: 20px;
+                padding-left: 15px;
+
+                span{
+                    font-size: 9pt;
+                    font-weight: 400;
+                }
+            }
+
+            app-news-card {
+                width: 100%;
+            }
+        }
+
+        p#withOutNews{
+            font-weight: 800;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        mat-paginator{
+            background-color: $main-color;
+            border-radius: 5px;
+        }
+    }
+}

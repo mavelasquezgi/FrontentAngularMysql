@@ -1,0 +1,46 @@
+@import "../assets/branding";
+
+mat-toolbar#header {
+  mat-toolbar-row {
+    figure {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 60px;
+      margin: 0 20px;
+      width: 200px;
+    }
+
+    figcaption {
+      border-left: 1px solid $secondary-color;
+      color: $secondary-color;
+      font-family: $font-principal;
+      font-size: .8em;
+      font-weight: 400;
+      line-height: 40px;
+      padding-left: 20px;
+    }
+
+    figure#logoPlatform{
+      background-image: url(../assets/imgs/logo-un.png);
+    }
+
+    
+  }
+}
+
+@media screen and (max-width: 599px){
+  figure{
+    width: 140px !important;
+  }
+
+  mat-sidenav{
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px){
+  mat-sidenav{
+    width: 40%;
+  }
+}
