@@ -2,5 +2,12 @@
   <ng-container *ngFor="let itemIn of menu">
     <div [routerLink]="[itemIn.url]">{{itemIn.title}}</div>
   </ng-container>
+  <ng-container *ngFor="let itemIn of products">
+    <mat-card>
+      <mat-card-title>{{itemIn.prod_name}}</mat-card-title><br>
+      <img mat-card-image src="itemIn.prod_image" alt="{{itemIn.prod_image}}"><br>
+      <button mat-button color="primary">button</button>
+  </mat-card>
+  </ng-container>
 </div>
 <app-footer></app-footer>

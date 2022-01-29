@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
+import { ProductService } from 'src/app/_services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,9 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class HomeComponent implements OnInit {
 
   menu: any = [];
+  products: any[];
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, public productService:ProductService ) {
     this.menu = [
       {
         title: "Crear Solicitud",
@@ -23,8 +25,15 @@ export class HomeComponent implements OnInit {
     ]
   }
 
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+    this.productService.allproducts().subscribe((res) => {
+      this.products = res;
+      //console.log(this.products)
+    }, (err) => {
+      console.log(err);
+    });
+    
   }
 
 
