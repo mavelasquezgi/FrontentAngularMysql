@@ -3,11 +3,29 @@
     <div [routerLink]="[itemIn.url]">{{itemIn.title}}</div>
   </ng-container>
   <ng-container *ngFor="let itemIn of products">
-    <mat-card>
-      <mat-card-title>{{itemIn.prod_name}}</mat-card-title><br>
-      <img mat-card-image src="itemIn.prod_image" alt="{{itemIn.prod_image}}"><br>
-      <button mat-button color="primary">button</button>
-  </mat-card>
+
+  <div class="col-lg-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            Subir imagen de producto
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div>
+                    <img src="assets/imgs/logo-un.png" class="img-fluid" alt="foto"><br>
+                    <input type="text" name="name" placeholder="Nombre producto" value="{{itemIn.prod_name}}">
+                    <input type="text" name="descrip" placeholder="Descripción producto"  value="{{itemIn.prod_descrip}}">
+                    <input type="text" name="price" placeholder="Precio producto" value="{{itemIn.prod_price}}">
+                    <input type="text" name="heigth" placeholder="Peso del producto" value="{{itemIn.prod_weigth}}">
+                </div>
+            </form>
+            <article>
+                <button mat-raised-button color="primary">Mostrar detalle</button>
+            </article>
+        </div>
+    </div>
+  </div>
+  
   </ng-container>
 </div>
 <app-footer></app-footer>

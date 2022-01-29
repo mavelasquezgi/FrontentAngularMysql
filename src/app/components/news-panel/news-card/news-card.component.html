@@ -1,24 +1,23 @@
-<section class="card">
-
-    <div id="statistics">
-        <div mat-card >
-            <form action="">
-                <img src="" alt="foto"><br>
-                <input type="text" name="name" placeholder="Nombre producto">
-                <input type="text" name="descrip" placeholder="Descripción producto">
-                <input type="text" name="price" placeholder="Precio producto">
-                <input type="text" name="heigth" placeholder="Peso del producto">
-                
-            </form>
+<div class="col-lg-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            Subir imagen de producto
         </div>
-
+        <div class="card-body">
+            <form action="">
+                <div>
+                    <img src="" alt="foto"><br>
+                    <input type="text" name="name" placeholder="Nombre producto">
+                    <input type="text" name="descrip" placeholder="Descripción producto">
+                    <input type="text" name="price" placeholder="Precio producto">
+                    <input type="text" name="heigth" placeholder="Peso del producto">
+                </div>
+            </form>
+            <article>
+                <button mat-raised-button color="primary">Mostrar detalle</button>
+            </article>
+        </div>
 
     </div>
 
-    <article>
-        <section id="infoStatistics">
-
-        </section>
-        <button mat-raised-button color="primary">Ir a la solicitud</button>
-    </article>
-</section>
+</div>
