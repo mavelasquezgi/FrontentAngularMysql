@@ -1,22 +1,27 @@
 
-<div class="col-lg-4 mx-auto">
+<div class="col-lg-3 mx-auto">
     <div class="card">
         <div class="card-header">
-            Subir imagen de producto
+            <h1>Formulario para crear productos</h1>
         </div>
         <div class="card-body">
-            <form >
+            <form (submit)="onSubmit(name,category,descrip,price,wheigth,image)">
                 <div>
-                    <input type="text" name="name" placeholder="Nombre producto">
-                    <input type="text" name="descrip" placeholder="Descripción producto">
-                    <input type="text" name="price" placeholder="Precio producto">
-                    <input type="text" name="wheigth" placeholder="Peso del producto">
+                    <input type="text" name="name" class="form-control" placeholder="Nombre producto" #name>
+                    <select name="category" id="category" class="form-control" #category>
+                        <ng-container *ngFor="let itemIn of listCategories">
+                            <option value="{{itemIn.cat_id}}">{{itemIn.cat_name}}</option>
+                        </ng-container>
+                    </select>
+                    <input type="text" name="descrip" class="form-control" placeholder="Descripción producto" #descrip>
+                    <input type="text" name="price" class="form-control" placeholder="Precio producto" #price>
+                    <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" #wheigth>
                 </div>
                 <article>
-                    <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
-                    <img [src]="photoSelected || 'assets/imgs/noImage.png'" class="img-fluid"  alt="Subir imagen" (click)="photoInput.click()">
+                    <input type="file" class="d-none" (change)="onPhotoSelected($event)" #image>
+                    <img [src]="photoSelected || 'assets/imgs/noImage.png'" class="img-fluid"  alt="Subir imagen" (click)="image.click()">
                 </article>
-                <button></button>
+                <button class="btn btn-primary bnt-block" >Guardar producto</button>
             </form>
         </div>
     </div>

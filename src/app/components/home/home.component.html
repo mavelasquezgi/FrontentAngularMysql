@@ -1,31 +1,25 @@
-<div class="container">
-  <ng-container *ngFor="let itemIn of menu">
-    <div [routerLink]="[itemIn.url]">{{itemIn.title}}</div>
-  </ng-container>
-  <ng-container *ngFor="let itemIn of products">
-
-  <div class="col-lg-4 mx-auto">
-    <div class="card">
-        <div class="card-header">
-            Subir imagen de producto
-        </div>
-        <div class="card-body">
-            <form action="">
-                <div>
-                    <img src="assets/imgs/logo-un.png" class="img-fluid" alt="foto"><br>
-                    <input type="text" name="name" placeholder="Nombre producto" value="{{itemIn.prod_name}}">
-                    <input type="text" name="descrip" placeholder="Descripción producto"  value="{{itemIn.prod_descrip}}">
-                    <input type="text" name="price" placeholder="Precio producto" value="{{itemIn.prod_price}}">
-                    <input type="text" name="heigth" placeholder="Peso del producto" value="{{itemIn.prod_weigth}}">
-                </div>
-            </form>
-            <article>
-                <button mat-raised-button color="primary">Mostrar detalle</button>
-            </article>
+  
+<ng-container *ngFor="let itemIn of products">
+    <div class="col-lg-3 d-inline-flex m-2">
+        <div class="card d-inline-flex">
+            <div class="card-header">
+                Subir imagen de producto
+            </div>
+            <div class="card-body">
+                <form>
+                    <div>
+                        <img src="assets/imgs/logo-un.png" class="img-fluid" alt="foto"><br>
+                        <input type="text" name="id" class="form-control" placeholder="Nombre producto" value="{{itemIn.prod_id}}">
+                        <input type="text" name="name" class="form-control" placeholder="Nombre producto" value="{{itemIn.prod_name}}">
+                        <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value="{{itemIn.prod_descrip}}">
+                        <input type="text" name="price" class="form-control" placeholder="Precio producto" value="{{itemIn.prod_price}}">
+                        <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value="{{itemIn.prod_wheigth}}">
+                    </div>
+                </form>
+                <article>
+                    <button mat-raised-button color="primary">Editar</button>
+                </article>
+            </div>
         </div>
     </div>
-  </div>
-  
-  </ng-container>
-</div>
-<app-footer></app-footer>
+</ng-container>

@@ -13,18 +13,8 @@ export class HomeComponent implements OnInit {
   products: any[];
 
   constructor(public authService: AuthService, public productService:ProductService ) {
-    this.menu = [
-      {
-        title: "Crear Solicitud",
-        url: "/form"
-      },
-      {
-        title: "verSolicitudes",
-        url: "/list"
-      }
-    ]
-  }
 
+  }
 
   ngOnInit(): void {
     this.productService.allproducts().subscribe((res) => {
@@ -32,10 +22,10 @@ export class HomeComponent implements OnInit {
       //console.log(this.products)
     }, (err) => {
       console.log(err);
-    });
-    
+    });    
   }
 
-
-
+  updateProduct() {
+    //this.productService.updateProduct();
+  }
 }
