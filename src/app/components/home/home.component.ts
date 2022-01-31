@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { ProductService } from 'src/app/_services/product.service';
 
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   menu: any = [];
   products: any[];
 
-  constructor(public authService: AuthService, public productService:ProductService ) {
+  constructor(public authService: AuthService, public productService:ProductService, private router: Router) {
 
   }
 
@@ -27,5 +28,16 @@ export class HomeComponent implements OnInit {
 
   updateProduct() {
     //this.productService.updateProduct();
+  }
+
+  delProduct(id:HTMLInputElement) {
+    console.log(id.value);
+    this.productService.delproduct(id.value).subscribe(res => window.location.reload(), err => console.log(err));
+  }
+
+  selectedCard (id:string){
+    console.log(id)
+    this.router.navigate(['/list',id]);
+    this.productService.product(id).subscribe(res => console.log(res), err => console.log(err));
   }
 }

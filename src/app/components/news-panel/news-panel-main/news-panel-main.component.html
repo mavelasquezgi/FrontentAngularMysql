@@ -1,18 +1,25 @@
 <section id="main">
-
-    <app-search-panel>
-    </app-search-panel>
-
-    <section>
-        <h1>
-            Listado de solicitudes
-            
-        </h1>
-
-        <app-news-card></app-news-card>
-
-        
-    </section>
-
-
+    <div class="col-lg-3 d-inline-flex m-2">
+        <div class="card d-inline-flex card-product">
+            <div class="card-header">
+                Editando producto
+            </div>
+            <div class="card-body">
+                <form>
+                    <div>
+                        <img [src]="'http://localhost:4200/' + product.prod_image" class="img-card-top w-100" alt="foto">
+                        <input type="text" name="id" class="form-control" placeholder="Nombre producto" value={{product.prod_id}} #id hidden>
+                        <input type="text" name="name" class="form-control" placeholder="Nombre producto" value={{product.prod_name}}>
+                        <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value={{product.prod_descrip}}>
+                        <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{product.prod_price}}>
+                        <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{product.prod_wheigth}}>
+                    </div>
+                </form>
+                <article>
+                    <button mat-raised-button class="btn-primary">Editar</button>
+                    <button mat-raised-button class="btn-danger" (click)='delProduct(id)'>Eliminar</button>
+                </article>
+            </div>
+        </div>
+    </div>
 </section>

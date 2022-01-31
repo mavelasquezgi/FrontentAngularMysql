@@ -15,3 +15,11 @@
 .container p {
   text-align: center;
 }
+
+.card-product {
+  cursor: pointer;
+}
+
+.card-product:hover {
+  border: 1px solid green;
+}

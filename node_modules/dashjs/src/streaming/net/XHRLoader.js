@@ -68,6 +68,15 @@ function XHRLoader(cfg) {
             xhr = requestModifier.modifyRequestHeader(xhr);
         }
 
+        if (httpRequest.headers) {
+            for (let header in httpRequest.headers) {
+                let value = httpRequest.headers[header];
+                if (value) {
+                    xhr.setRequestHeader(header, value);
+                }
+            }
+        }
+
         xhr.withCredentials = httpRequest.withCredentials;
 
         xhr.onload = httpRequest.onload;
@@ -75,6 +84,8 @@ function XHRLoader(cfg) {
         xhr.onerror = httpRequest.onerror;
         xhr.onprogress = httpRequest.progress;
         xhr.onabort = httpRequest.onabort;
+        xhr.ontimeout = httpRequest.ontimeout;
+        xhr.timeout = httpRequest.timeout;
 
         xhr.send();
 

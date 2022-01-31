@@ -28,7 +28,7 @@ const routes: Routes = [
     component: HomeComponent    
   },
   {
-    path: "list",
+    path: "list/:id",
     component: NewsPanelMainComponent,
     canActivate: [AuthGuard],
     data: { roles: [Role.Official, Role.Admin] }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { UploadService } from '../../_services/upload.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DatePipe } from '@angular/common';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { CategoriesService } from 'src/app/_services/categories.service';
 import { ProductService } from 'src/app/_services/product.service';
+import {Router} from '@angular/router';
 
 // para manejar los eventos en la aplicación
 interface HtmlInputEvent extends Event {
@@ -35,7 +35,7 @@ export class MainFormComponent implements OnInit {
 
   });
 
-  constructor(public productServices:ProductService, protected fb: FormBuilder, public dialog: MatDialog, public datepipe: DatePipe, public categoriesServices: CategoriesService ) { }
+  constructor(public productServices:ProductService, protected fb: FormBuilder, public dialog: MatDialog, public datepipe: DatePipe, public categoriesServices: CategoriesService, private router:Router ) { }
 
   ngOnInit(): void {
     this.categoriesServices.allCategories().subscribe((res) => {
@@ -67,10 +67,8 @@ export class MainFormComponent implements OnInit {
       wheigth: wheigth.value,
       image: this.file
     }
-    console.log(body);
-    console.log(typeof(category.value));
-    this.productServices.createProduct(body).subscribe(res => console.log(res),err => console.log(err));
+    //this.productServices.createProduct(body).subscribe(res => console.log(res),err => console.log(err));
     // this is alternativa for save product
-    //this.productServices.create2Product(name.value,descrip.value,category.value,price.value,wheigth.value,this.file).subscribe(res => console.log(res),err => console.log(err));
+    this.productServices.create2Product(name.value,descrip.value,category.value,price.value,wheigth.value,this.file).subscribe(res => this.router.navigate(['']), err => this.router.navigate(['']));
   }
 }
