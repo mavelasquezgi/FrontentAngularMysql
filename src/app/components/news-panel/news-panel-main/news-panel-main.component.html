@@ -1,10 +1,10 @@
 <section id="main">
-    <div class="col-lg-3 d-inline-flex m-2">
-        <div class="card d-inline-flex card-product">
-            <div class="card-header">
+    <div class="row">
+        <div class="card">
+            <div class="card-header" *ngIf="!product; else main_content">
                 Editando producto
             </div>
-            <div class="card-body">
+            <div class="card-body" #main_content>
                 <form>
                     <div>
                         <img [src]="'http://localhost:4200/' + product.prod_image" class="img-card-top w-100" alt="foto">
