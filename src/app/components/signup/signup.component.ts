@@ -32,6 +32,7 @@ export class SignupComponent implements OnInit {
       email: signUpData.email,
       fullname: signUpData.fullname,
       password2: signUpData.password2,
+      role: "Customer"
     }
     this.authService.signUp(user).subscribe(
       res => {

@@ -14,11 +14,11 @@
                         </ng-container>
                     </select>
                     <input type="text" name="descrip" class="form-control" placeholder="Descripción producto" #descrip>
-                    <input type="text" name="price" class="form-control" placeholder="Precio producto" #price>
-                    <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" #wheigth>
+                    <input type="number" name="price" class="form-control" placeholder="Precio producto" #price>
+                    <input type="number" name="wheigth" class="form-control" placeholder="Peso del producto" #wheigth>
                 </div>
                 <article>
-                    <input type="file" class="d-none" (change)="onPhotoSelected($event)" #image>
+                    <input type="file" class="d-none" (change)="onPhotoSelected($event)" #image required>
                     <img [src]="photoSelected || 'assets/imgs/noImage.png'" class="img-fluid"  alt="Subir imagen" (click)="image.click()">
                 </article>
                 <button class="btn btn-primary bnt-block" >Guardar producto</button>

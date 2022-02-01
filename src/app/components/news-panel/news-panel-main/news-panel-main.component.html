@@ -1,24 +1,33 @@
 <section id="main">
-    <div class="col-lg-3 d-inline-flex m-2">
-        <div class="card d-inline-flex card-product">
-            <div class="card-header">
+    <div class="row">
+        <div class="card">
+            <div class="card-header" *ngIf="!product; else main_content">
                 Editando producto
             </div>
-            <div class="card-body">
-                <form>
+            <div class="card-body" #main_content>
+                <form class="card-body" (submit)="onSubmit(id,name,category,descrip,price,wheigth,image)">
                     <div>
-                        <img [src]="'http://localhost:4200/' + product.prod_image" class="img-card-top w-100" alt="foto">
+                        <article>
+                            <input type="file" class="d-none" (change)="onPhotoSelected($event)" [value]="product.prod_image" #image>
+                            <img [src]="product.prod_image || 'assets/imgs/noImage.png'" class="img-fluid"  alt="Subir imagen" (click)="image.click()">
+                        </article>
                         <input type="text" name="id" class="form-control" placeholder="Nombre producto" value={{product.prod_id}} #id hidden>
-                        <input type="text" name="name" class="form-control" placeholder="Nombre producto" value={{product.prod_name}}>
-                        <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value={{product.prod_descrip}}>
-                        <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{product.prod_price}}>
-                        <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{product.prod_wheigth}}>
+                        <input type="text" name="name" class="form-control" placeholder="Nombre producto" value={{product.prod_name}} #name>
+                        <select name="category" id="category" class="form-control" #category>
+                            <ng-container *ngFor="let itemIn of listCategories">
+                                <option value="{{itemIn.cat_id}}">{{itemIn.cat_name}}</option>
+                            </ng-container>
+                        </select>
+                        <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value={{product.prod_descrip}} #descrip>
+                        <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{product.prod_price}} #price>
+                        <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{product.prod_wheigth}} #wheigth>
                     </div>
+                    <button mat-raised-button class="btn-primary">Editar</button>
                 </form>
                 <article>
-                    <button mat-raised-button class="btn-primary">Editar</button>
-                    <button mat-raised-button class="btn-danger" (click)='delProduct(id)'>Eliminar</button>
+                    
                 </article>
+                <button mat-raised-button class="btn-danger" (click)='delProduct(id)'>Eliminar</button>
             </div>
         </div>
     </div>

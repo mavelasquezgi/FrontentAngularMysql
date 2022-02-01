@@ -27,14 +27,17 @@ export class ProductService {
     return this.http.request(req);
   }
 
-  updateProduct(body: any) {
-    console.log(body);
-    console.log("update");
-    const req = new HttpRequest('POST', `${this.URL}/updateproduct`, body, {
-      reportProgress: true,
-      responseType: 'json'
-    });
-    return this.http.request(req);
+  updateProduct(id: string, name: string, descrip: string,category:string, price:string, wheigth:string, image:File ) {
+    const body = new FormData()
+    body.append('id',id);
+    body.append('name',name);
+    body.append('descrip',descrip);
+    body.append('category',category);
+    body.append('price',price);
+    body.append('wheigth',wheigth);
+    body.append('image',image);
+    console.log(body.getAll("id"));
+    return this.http.post(`${this.URL}/updateproduct`, body);
   }
 
   delproduct(id:string) {
@@ -53,7 +56,7 @@ export class ProductService {
   }
 
 // alternativa para crear productos
-  create2Product(name: string,descrip: string,category:string, price:string, wheigth:string, image:File) {
+  create2Product(name: string, descrip: string,category:string, price:string, wheigth:string, image:File) {
     const body = new FormData()
     body.append('name',name);
     body.append('descrip',descrip);
