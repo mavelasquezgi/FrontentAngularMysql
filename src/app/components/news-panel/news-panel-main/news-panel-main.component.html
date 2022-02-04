@@ -22,13 +22,16 @@
                         <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{product.prod_price}} #price>
                         <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{product.prod_wheigth}} #wheigth>
                     </div>
-                    <button mat-raised-button class="btn-primary">Editar</button>
+                    <button mat-raised-button class="btn-primary btn-block">Guardar cambios</button>
                 </form>
-                <article>
-                    
-                </article>
-                <button mat-raised-button class="btn-danger" (click)='delProduct(id)'>Eliminar</button>
+                <button mat-raised-button class="btn-danger btn-block" (click)='delProduct(id)'>Eliminar</button>
+                <button mat-raised-button class="btn btn-success btn-block" (click)='openModal()'>Generar orden Modal</button>
             </div>
         </div>
     </div>
 </section>
+<div *ngIf='switchModal == true'>
+   <div class="card-body center">
+    <app-ordermodal [input]='product.prod_id'></app-ordermodal>
+   </div>
+</div>

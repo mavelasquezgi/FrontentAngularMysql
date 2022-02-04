@@ -35,6 +35,7 @@ import { FormatTimePipe } from './_pipes/format-time-pipe';
 import { ThousandsPipe } from './_pipes/thousand-pipe';
 import { SafePipe } from './_pipes/safeurl-pipe';
 import { MainFormComponent } from './components/main-form/main-form.component';
+import { OrdermodalComponent } from './components/news-panel/ordermodal/ordermodal.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { MainFormComponent } from './components/main-form/main-form.component';
     SafePipe,
     ThousandsPipe,
     MainFormComponent,
+    OrdermodalComponent,
 
   ],
   imports: [

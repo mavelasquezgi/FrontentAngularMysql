@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import {ActivatedRoute, Router} from '@angular/router'
 import { CategoriesService } from 'src/app/_services/categories.service';
+import { OrdersService } from 'src/app/_services/orders.service';
 
 interface HtmlInputEvent extends Event {
   // para realizar el auto completado al codificar
@@ -24,7 +25,10 @@ export class NewsPanelMainComponent implements OnInit {
   photoSelected: string | ArrayBuffer;
   file: File;
 
-  constructor(public datepipe: DatePipe,private router:Router, public categoriesServices: CategoriesService, public productServices:ProductService, private activateRoute: ActivatedRoute, private Route: Router) {
+  // boolean for modal
+  switchModal: boolean;
+
+  constructor(public datepipe: DatePipe,private router:Router, public categoriesServices: CategoriesService, public productServices:ProductService,public ordersService: OrdersService, private activateRoute: ActivatedRoute, private Route: Router) {
 
   }
 
@@ -47,11 +51,20 @@ export class NewsPanelMainComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
+
+    this.ordersService.$modal.subscribe((value)=> (this.switchModal = value));
+
   }
 
   delProduct(id:HTMLInputElement) {
     console.log(id.value);
-    this.productServices.delproduct(id.value).subscribe(res => this.router.navigate(['']), err => console.log(err));
+    const result = window.confirm("Desea eliminar el producto definitivamente");
+    console.log(result);
+    
+    if (result) {
+      this.productServices.delproduct(id.value).subscribe(res => this.router.navigate(['']), err => console.log(err));
+    }
+    
   }
 
   onSubmit(id:HTMLInputElement, name:HTMLInputElement,category:HTMLInputElement,descrip:HTMLInputElement,price: HTMLInputElement,wheigth:HTMLInputElement,image:HTMLIFrameElement) {
@@ -71,5 +84,9 @@ export class NewsPanelMainComponent implements OnInit {
       reader.readAsDataURL(this.file);
     }
   } 
+
+  openModal () {
+    this.switchModal = !this.switchModal;
+  }
 
 }

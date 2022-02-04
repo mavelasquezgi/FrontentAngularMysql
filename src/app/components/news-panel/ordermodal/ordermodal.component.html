@@ -1,0 +1,11 @@
+<ng-container>
+    <form >
+        <label for="units">
+            <input name="units" type="number" placeholder="Número de unidades" #units required>
+        </label>
+    </form>
+    <section>
+        <button type="button" class="btn btn-danger" (click)='closeModal()'>Close</button>
+        <button type="button" class="btn btn-success" (click)='saveOrder(units)'>Guardar</button>
+    </section>
+</ng-container>
