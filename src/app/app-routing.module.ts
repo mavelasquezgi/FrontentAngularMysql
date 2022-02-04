@@ -14,9 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NewsPanelMainComponent } from "./components/news-panel/news-panel-main/news-panel-main.component";
 import { SignupComponent } from "./components/signup/signup.component";
 import { SigninComponent } from "./components/signin/signin.component";
-import { ViewpdfComponent } from './components/viewpdf/viewpdf.component';
 import { MainFormComponent } from "./components/main-form/main-form.component";
-import { OrdermodalComponent } from "./components/news-panel/ordermodal/ordermodal.component";
+import { OrderslistComponent } from "./components/orderslist/orderslist.component";
 
 const routes: Routes = [
   {
@@ -51,8 +50,8 @@ const routes: Routes = [
     canActivate: [IssignedguardService],
   },
   {
-    path: "onnewspress/:idnote",
-    component: ViewpdfComponent,
+    path: "orders",
+    component: OrderslistComponent,
   }
 ];
 

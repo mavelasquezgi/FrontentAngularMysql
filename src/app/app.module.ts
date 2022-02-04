@@ -36,6 +36,7 @@ import { ThousandsPipe } from './_pipes/thousand-pipe';
 import { SafePipe } from './_pipes/safeurl-pipe';
 import { MainFormComponent } from './components/main-form/main-form.component';
 import { OrdermodalComponent } from './components/news-panel/ordermodal/ordermodal.component';
+import { OrderslistComponent } from './components/orderslist/orderslist.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { OrdermodalComponent } from './components/news-panel/ordermodal/ordermod
     ThousandsPipe,
     MainFormComponent,
     OrdermodalComponent,
+    OrderslistComponent,
 
   ],
   imports: [

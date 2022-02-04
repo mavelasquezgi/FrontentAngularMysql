@@ -1,9 +1,11 @@
-  
+<div>
+    <button class="btn btn-primary block" (click)="generatePdf()">Generar PDF de productos</button>
+</div>
 <ng-container *ngFor="let itemIn of products">
     <div class="col-lg-3 d-inline-flex m-2">
         <div class="card d-inline-flex card-product" (click)='selectedCard(itemIn.prod_id)'>
             <div class="card-header">
-                Subir imagen de producto
+                
             </div>
             <div class="card-body">
                 <form>

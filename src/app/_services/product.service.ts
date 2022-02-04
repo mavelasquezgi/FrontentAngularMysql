@@ -68,5 +68,11 @@ export class ProductService {
     console.log("createproduct");
     return this.http.post(`${this.URL}/createproduct`, body);
   }
+
+  // pdf route
+  productsPdf(){
+    return this.http.get(`${this.URL}/productspdf`); 
+  }
+
   
 }

@@ -40,8 +40,8 @@ export class MenuComponent implements OnInit {
         roles: ["Admin", "Official"]
       },
       {
-        title: "Ver Solicitudes",
-        url: "/list",
+        title: "Lista de pedidos",
+        url: "/orders",
         roles: ["Admin", "Student", "Official"]
       }
     ]

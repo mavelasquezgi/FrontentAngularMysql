@@ -40,4 +40,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/list',id]);
     this.productService.product(id).subscribe(res => console.log(res), err => console.log(err));
   }
+
+  generatePdf() {
+    this.productService.productsPdf().subscribe(res => window.alert("PDF generado de forma exitosa"), err => (window.alert("No fue posible generar el PDF"),console.log(err)));
+  }
 }

@@ -1,0 +1,30 @@
+
+
+    <table class="table">
+        <tr>
+            <th scope="col">
+                Id usuario
+            </th>
+            <th scope="col">
+                Id producto
+            </th>
+            <th scope="col">
+                Unidades
+            </th>
+        </tr>
+        <ng-container *ngFor="let itemIn of ordersList">
+            <tr>
+            <td>
+                {{itemIn.orderSt_user}}
+            </td>
+            <td>
+                {{itemIn.orderSt_product}}
+            </td>
+            <td>
+                {{itemIn.orderSt_units}}
+            </td> 
+            </tr>
+        </ng-container>
+    </table>
+
+
