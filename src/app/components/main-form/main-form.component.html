@@ -7,15 +7,32 @@
         <div class="card-body">
             <form (submit)="onSubmit(name,category,descrip,price,wheigth,image)">
                 <div>
-                    <input type="text" name="name" class="form-control" placeholder="Nombre producto" #name>
+                    <div class="form-group">
+                        <label for="NombreProducto">Nombre producto</label>
+                        <input type="text" name="name" class="form-control" placeholder="Nombre producto" #name>
+                    </div>
+                    
                     <select name="category" id="category" class="form-control" #category>
                         <ng-container *ngFor="let itemIn of listCategories">
                             <option value="{{itemIn.cat_id}}">{{itemIn.cat_name}}</option>
                         </ng-container>
                     </select>
-                    <input type="text" name="descrip" class="form-control" placeholder="Descripción producto" #descrip>
-                    <input type="number" name="price" class="form-control" placeholder="Precio producto" #price>
-                    <input type="number" name="wheigth" class="form-control" placeholder="Peso del producto" #wheigth>
+                    
+                    <div class="form-group">
+                        <label for="PrecioProducto">Descripcion producto</label>
+                        <input type="text" name="descrip" class="form-control" placeholder="Descripción producto" #descrip>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="PrecioProducto">Precio producto</label>
+                        <input type="number" name="price" class="form-control" placeholder="Precio producto" #price>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="PesoProducto">Peso del producto</label>
+                        <input type="number" name="wheigth" class="form-control" placeholder="Peso del producto" #wheigth>
+                    </div>
+                    
                 </div>
                 <article>
                     <input type="file" class="d-none" (change)="onPhotoSelected($event)" #image required>

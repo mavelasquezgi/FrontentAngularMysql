@@ -12,15 +12,31 @@
                             <img [src]="product.prod_image || 'assets/imgs/noImage.png'" class="img-fluid"  alt="Subir imagen" (click)="image.click()">
                         </article>
                         <input type="text" name="id" class="form-control" placeholder="Nombre producto" value={{product.prod_id}} #id hidden>
-                        <input type="text" name="name" class="form-control" placeholder="Nombre producto" value={{product.prod_name}} #name>
+                        
+                        <div class="form-group">
+                            <label for="NombreProducto">Nombre producto</label>
+                            <input type="text" name="name" class="form-control" placeholder="Nombre producto" value={{product.prod_name}} #name>
+                        </div>
                         <select name="category" id="category" class="form-control" #category>
                             <ng-container *ngFor="let itemIn of listCategories">
                                 <option value="{{itemIn.cat_id}}">{{itemIn.cat_name}}</option>
                             </ng-container>
                         </select>
-                        <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value={{product.prod_descrip}} #descrip>
-                        <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{product.prod_price}} #price>
-                        <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{product.prod_wheigth}} #wheigth>
+
+                        <div class="form-group">
+                            <label for="PrecioProducto">Descripcion producto</label>
+                            <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value={{product.prod_descrip}} #descrip>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="PrecioProducto">Precio producto</label>
+                            <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{product.prod_price}} #price>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="PesoProducto">Peso del producto</label>
+                            <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{product.prod_wheigth}} #wheigth>
+                        </div>
                     </div>
                     <button mat-raised-button class="btn-primary btn-block">Guardar cambios</button>
                 </form>

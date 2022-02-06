@@ -12,10 +12,27 @@
                     <div>
                         <img [src]="'http://localhost:4200/' + itemIn.prod_image" class="img-card-top w-100" alt="foto">
                         <input type="text" name="id" class="form-control" placeholder="Nombre producto" value={{itemIn.prod_id}} #id hidden>
-                        <input type="text" name="name" class="form-control" placeholder="Nombre producto" value={{itemIn.prod_name}}>
-                        <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value={{itemIn.prod_descrip}}>
-                        <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{itemIn.prod_price}}>
-                        <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{itemIn.prod_wheigth}}>
+
+                        <div class="form-group">
+                            <label for="NombreProducto">Nombre producto</label>
+                            <input type="text" name="name" class="form-control" placeholder="Nombre producto" value={{itemIn.prod_name}}>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="PrecioProducto">Descripcion producto</label>
+                            <input type="text" name="descrip" class="form-control" placeholder="Descripción producto"  value={{itemIn.prod_descrip}}>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="PrecioProducto">Precio producto</label>
+                            <input type="text" name="price" class="form-control" placeholder="Precio producto" value={{itemIn.prod_price}}>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="PesoProducto">Peso del producto</label>
+                            <input type="text" name="wheigth" class="form-control" placeholder="Peso del producto" value={{itemIn.prod_wheigth}}>
+                        </div>
+
                     </div>
                 </form>
                 <article>
