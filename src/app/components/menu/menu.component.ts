@@ -32,7 +32,7 @@ export class MenuComponent implements OnInit {
       {
         title: "Inicio",
         url: "/home",
-        roles: ["Admin", "Student", "Official"]
+        roles: ["Admin", "Customer", "Official"]
       },
       {
         title: "Crear producto",
@@ -42,7 +42,7 @@ export class MenuComponent implements OnInit {
       {
         title: "Lista de pedidos",
         url: "/orders",
-        roles: ["Admin", "Student", "Official"]
+        roles: ["Admin", "Customer", "Official"]
       }
     ]
 

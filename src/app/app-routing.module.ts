@@ -31,13 +31,13 @@ const routes: Routes = [
     path: "list/:id",
     component: NewsPanelMainComponent,
     canActivate: [AuthGuard],
-    data: { roles: [Role.Official, Role.Admin] }
+    data: { roles: [Role.Customer, Role.Admin] }
   },
   {
     path: "form",
     component: MainFormComponent,
     canActivate: [AuthGuard],
-    data: { roles: [Role.Official, Role.Admin] }
+    data: { roles: [Role.Customer, Role.Admin] }
   },
   {
     path: "signin",

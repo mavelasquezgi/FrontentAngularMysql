@@ -38,7 +38,7 @@ export class AuthService {
 
 
   login(username: string, password: string) {
-    return this.http.post<User>(`${this.URL}/signin`, { username, password, role: ["Admin"] }).pipe(map(userResponse => {
+    return this.http.post<User>(`${this.URL}/signin`, { username, password, role: ["Admin","Customer"] }).pipe(map(userResponse => {
       // store user details and jwt token in local storage to keep user logged in between page refreshes
       let expiresAt = userResponse.expiresIn;
       userResponse.expiresIn = JSON.stringify(moment().add(expiresAt, 'second'));

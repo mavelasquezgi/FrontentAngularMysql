@@ -40,7 +40,9 @@
                     </div>
                     <button mat-raised-button class="btn-primary btn-block">Guardar cambios</button>
                 </form>
-                <button mat-raised-button class="btn-danger btn-block" (click)='delProduct(id)'>Eliminar</button>
+                <div *ngIf="role == permit">
+                    <button mat-raised-button class="btn-danger btn-block" (click)='delProduct(id)'>Eliminar</button>
+                </div>
                 <button mat-raised-button class="btn btn-success btn-block" (click)='openModal()'>Generar orden Modal</button>
             </div>
         </div>

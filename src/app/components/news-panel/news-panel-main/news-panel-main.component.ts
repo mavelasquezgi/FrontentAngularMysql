@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/_services/product.service';
 import {ActivatedRoute, Router} from '@angular/router'
 import { CategoriesService } from 'src/app/_services/categories.service';
 import { OrdersService } from 'src/app/_services/orders.service';
+import { AuthService } from 'src/app/_services/auth.service';
 
 interface HtmlInputEvent extends Event {
   // para realizar el auto completado al codificar
@@ -24,11 +25,13 @@ export class NewsPanelMainComponent implements OnInit {
   listCategories: any[] = [];
   photoSelected: string | ArrayBuffer;
   file: File;
+  role: string | undefined;
+  permit:string = "Admin"
 
   // boolean for modal
   switchModal: boolean;
 
-  constructor(public datepipe: DatePipe,private router:Router, public categoriesServices: CategoriesService, public productServices:ProductService,public ordersService: OrdersService, private activateRoute: ActivatedRoute, private Route: Router) {
+  constructor(public datepipe: DatePipe,private router:Router, public categoriesServices: CategoriesService, public productServices:ProductService,public ordersService: OrdersService, private activateRoute: ActivatedRoute, private Route: Router, private authServices: AuthService) {
 
   }
 
@@ -54,6 +57,8 @@ export class NewsPanelMainComponent implements OnInit {
 
     this.ordersService.$modal.subscribe((value)=> (this.switchModal = value));
 
+    this.role = this.authServices.currentUserValue.role
+
   }
 
   delProduct(id:HTMLInputElement) {
@@ -70,7 +75,12 @@ export class NewsPanelMainComponent implements OnInit {
   onSubmit(id:HTMLInputElement, name:HTMLInputElement,category:HTMLInputElement,descrip:HTMLInputElement,price: HTMLInputElement,wheigth:HTMLInputElement,image:HTMLIFrameElement) {
     //this.productServices.createProduct(body).subscribe(res => console.log(res),err => console.log(err));
     // this is alternativa for save product
-    this.productServices.updateProduct(id.value, name.value,descrip.value,category.value,price.value,wheigth.value,this.file).subscribe(res => this.router.navigate(['']), err => this.router.navigate(['']));
+    if (this.authServices.currentUserRole == "Customer") {
+      window.alert("No autorizado para editar el producto");
+      window.location.reload()
+    } else {
+      this.productServices.updateProduct(id.value, name.value,descrip.value,category.value,price.value,wheigth.value,this.file).subscribe(res => this.router.navigate(['']), err => this.router.navigate(['']));
+    }
   }
 
   onPhotoSelected(event: HtmlInputEvent): void {
